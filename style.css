@@ -64,6 +64,10 @@ header{
     width: 100%;
     padding: 1.25rem;
     background-color: var(--gray);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
 }
 
 header div{
@@ -112,7 +116,7 @@ main{
 
 main section{
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 100px auto 0px auto;
 }
 
 main section h2{
