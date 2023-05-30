@@ -1,0 +1,106 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a{
+    cursor: pointer;
+    color: var(--black);
+    text-decoration: none;
+}
+
+:root{
+    --fontSize: 16px;
+    --gray: #f3f1f1;
+    --black: #000;
+    --orange: #fe6137;
+}
+
+body{
+    font-size: var(--fontSize);
+}
+
+header{
+    width: 100%;
+    padding: 1.25rem;
+    background-color: var(--gray);
+}
+
+header div{
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+}
+
+header div h1{
+    margin-right: 4rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+header div h1 a span{
+    font-weight: 700;
+    color: var(--orange);
+    font-size: 1.8rem;
+    margin-left: -0.625rem;
+}
+
+header div nav{
+    width: 50%;
+}
+
+header div nav ul{
+   display: flex;
+   justify-content: space-around;
+}
+
+header div nav ul li{
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+header div nav ul li a:hover{
+    border-bottom: 2px solid var(--orange);
+}
