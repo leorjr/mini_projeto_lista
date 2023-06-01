@@ -114,24 +114,24 @@ main{
     width: 100%;
 }
 
-main section{
+main section#listagem, section#contato{
     max-width: 1200px;
     margin: 100px auto 0px auto;
 }
 
-main section h2{
+main section#listagem > h2, section#contato > h2{
     margin: 1.25rem 0px;
     font-size: 1.2rem;
 }
 
-main section ul{
+main section#listagem ul{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 3%;
 }
 
-main section ul li{
+main section#listagem ul li{
     width: 100%;
     padding: 0.625rem;
     border: 1px solid var(--gray);
@@ -140,12 +140,12 @@ main section ul li{
     box-shadow: 6px 7px 5px -6px rgba(0,0,0,0.68);
 }
 
-main section ul li div{
+main section#listagem ul li div{
     width: 100%;
     display: grid;
 }
 
-main section ul li div i{
+main section#listagem ul li div i{
     width: 100%;
     margin-bottom: 0.625rem;
     text-align: end;
@@ -153,33 +153,33 @@ main section ul li div i{
     font-size: 1.2rem;
 }
 
-main section ul li div i:hover{
+main section#listagem ul li div i:hover{
     color: var(--orange);
 }
 
-main section ul li div figure{
+main section#listagem ul li div figure{
     width: 100%;
 }
 
-main section ul li div figure img{
+main section#listagem ul li div figure img{
     width: 100%;
 }
 
-main section ul li div p{
+main section#listagem ul li div p{
     text-align: center;
     padding: 0.625rem;
 }
 
-main > section > ul > li > div > p{
+main > section#listagem > ul > li > div > p{
     color: var(--black);
     text-transform: uppercase;
 }
 
-main > section > ul > li > div > p > span{
+main > section#listagem > ul > li > div > p > span{
     font-weight: 600;
 }
 
-main > section > ul > li > div > button{
+main > section#listagem > ul > li > div > button{
     width: 100%;
     padding: 0.625rem;
     display: grid;
@@ -192,17 +192,66 @@ main > section > ul > li > div > button{
     border: none;
 }
 
-main > section > ul > li > div > button:hover{
+main > section#listagem > ul > li > div > button:hover{
     filter: brightness(0.8);
     transition: filter 1s;
 }
 
-main > section > ul > li > div > button > p{
+main > section#listagem > ul > li > div > button > p{
     padding: 0px;
 
 }
 
-main > section > ul > li > div > button > i{
+main > section#listagem > ul > li > div > button > i{
     height: 100%;
     margin-bottom: 0px;
+}
+
+main > section#contato > form{
+    width: 100%;;
+}
+
+main > section#contato > form > div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.625rem;
+}
+
+main > section#contato > form > div > label{
+    margin-bottom: 0.25rem;
+}
+
+main > section#contato > form > div > input{
+    padding: 0.625rem;
+}
+
+main > section#contato > form > div > select{
+    padding: 0.625rem;
+}
+
+main > section#contato > form > div > select > option{
+    padding: 0.625rem;
+}
+
+main > section#contato > form > div:nth-child(6){
+    flex-direction: row;
+    align-items: center;
+}
+
+main > section#contato > form > div:nth-child(6) > label{
+    margin-left: 0.625rem;
+}
+
+main > section#contato > form > div > button{
+    padding: 0.625rem;
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+main > section#contato > form > div > button:hover{
+    filter: brightness(0.9);
+    transition: filter 1s;
 }
