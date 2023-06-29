@@ -59,22 +59,33 @@ const medicamentos = [
 const secaoListagemMedicamentos = document.querySelector('section#listagem')
 const lista = secaoListagemMedicamentos.querySelector('ul')
 
+const adicionarAoCarrinho = (e) =>{
+    console.log(e)
+}
 
 medicamentos.forEach(medicamento =>{
     const itemLista = document.createElement('li')
 
     itemLista.innerHTML = `
-    <div class="card">
+    <div class="card" id=${medicamento.title}>
         <img src=${medicamento.img} class="card-img-top" alt=${medicamento.title}>
         <div class="card-body">
-        <h5 class="card-title">${medicamento.title}</h5>
-        <p class="card-text">${medicamento.valor}</p>
+            <h5 class="card-title">${medicamento.title}</h5>
+            <p class="card-text">${medicamento.valor}</p>
             <a href="#" class="btn btn-warning">adicionar</a>
         </div>
     </div>
     `
-
     lista.appendChild(itemLista)
+
+    const botao = document.getElementById(medicamento.title)
+
+    botao.addEventListener('click', ()=>{
+        console.log(medicamentos)
+        console.log(`${medicamento.title}`)
+        window.alert(`${medicamento.title} adicionado ao carrinho`)
+    })
+    
 })
 
 
