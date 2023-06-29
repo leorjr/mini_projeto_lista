@@ -56,6 +56,10 @@ const medicamentos = [
     }
 ]
 
+const carrinhoDeCompras = []
+
+const listaDeFavoritos = []
+
 const secaoListagemMedicamentos = document.querySelector('section#listagem')
 const lista = secaoListagemMedicamentos.querySelector('ul')
 
@@ -68,24 +72,50 @@ medicamentos.forEach(medicamento =>{
 
     itemLista.innerHTML = `
     <div class="card" id=${medicamento.title}>
+        <i class="fa-regular fa-heart" id="heart-${medicamento.title}"></i>
         <img src=${medicamento.img} class="card-img-top" alt=${medicamento.title}>
         <div class="card-body">
             <h5 class="card-title">${medicamento.title}</h5>
             <p class="card-text">${medicamento.valor}</p>
-            <a href="#" class="btn btn-warning">adicionar</a>
+            <a href="#" class="btn btn-warning" id="botao-${medicamento.title}">adicionar</a>
         </div>
     </div>
     `
     lista.appendChild(itemLista)
 
-    const botao = document.getElementById(medicamento.title)
+    const botao = document.getElementById(`botao-${medicamento.title}`)
+    const heart = document.getElementById(`heart-${medicamento.title}`)
 
     botao.addEventListener('click', ()=>{
-        console.log(medicamentos)
-        console.log(`${medicamento.title}`)
+        carrinhoDeCompras.push(medicamento)
+        console.log(carrinhoDeCompras)
         window.alert(`${medicamento.title} adicionado ao carrinho`)
+    })
+
+    heart.addEventListener('click', ()=>{
+
+        const indexElement = listaDeFavoritos.findIndex(item => item.title == medicamento.title)
+
+        if(indexElement != -1){
+            listaDeFavoritos.splice(indexElement)
+            heart.classList.remove('fa-solid')
+            heart.classList.add('fa-regular')
+            heart.style.color = 'red'
+            `medicamento ${medicamento.title} removido da lista`
+            console.log(listaDeFavoritos)
+            return;
+        }
+
+        listaDeFavoritos.push(medicamento)
+        heart.classList.add('fa-solid')
+        heart.classList.remove('fa-regular')
+        heart.style.color = 'red'
+        window.alert(`${medicamento.title} adicionado aos favoritos`)
+        console.log(`medicamento ${medicamento.title} adicionado a lista`)
+        console.log(listaDeFavoritos)
+        return;
+        
     })
     
 })
-
 
