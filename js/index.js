@@ -30,6 +30,7 @@ div.innerHTML = `
                 <a class="nav-link" href="contato.html">Fale conosco</a>
             </li>
         </ul>
+        <button type="button" class="btn btn-dark">Trocar Tema</button>
     </div>
 `
 
@@ -117,5 +118,21 @@ medicamentos.forEach(medicamento =>{
         
     })
     
+})
+
+const botaoTema = document.querySelector('.btn-dark')
+let darkThemeIsActive = false;
+
+botaoTema.addEventListener('click', ()=>{
+
+    if(darkThemeIsActive){
+        body.style.background = 'white'
+        darkThemeIsActive = false
+        return
+    }
+
+    body.style.background = 'black'
+    darkThemeIsActive = true
+    return
 })
 
