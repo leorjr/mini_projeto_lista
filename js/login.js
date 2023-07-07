@@ -15,6 +15,7 @@
     const form = document.querySelector('form')
     const inputEmail = form.querySelector('#email')
     const inputSenha = form.querySelector('#senha')
+    const btnLogin = form.querySelector('.btn-primary')
 
     form.addEventListener('submit', (event)=>{
         event.preventDefault()

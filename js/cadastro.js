@@ -1,5 +1,3 @@
-import { dadosObjeto } from "./dados.js";
-
 (async ()=> {
     let database = JSON.parse(localStorage.getItem('database'))
 

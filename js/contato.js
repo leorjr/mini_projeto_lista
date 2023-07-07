@@ -1,3 +1,9 @@
+const user = localStorage.getItem('mini_projeto')
+
+if(!user){
+    window.location.href = 'login.html'
+}
+
 const formSelect = document.querySelector('.form-select')
 const assuntos = ['duvidas', 'consultas', 'orçamentos', 'reclamações']
 

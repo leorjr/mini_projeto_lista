@@ -1,3 +1,9 @@
+const user = localStorage.getItem('mini_projeto')
+
+if(!user){
+    window.location.href = 'login.html'
+}
+
 const body = document.querySelector('body')
 const header = document.createElement('header')
 body.appendChild(header)
@@ -135,4 +141,3 @@ botaoTema.addEventListener('click', ()=>{
     darkThemeIsActive = true
     return
 })
-
